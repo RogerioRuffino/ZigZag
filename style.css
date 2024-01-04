@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@100&family=Roboto:wght@100&family=Rowdies:wght@300&display=swap');
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@100&family=Roboto:wght@100&family=Rowdies:wght@300&display=swap');
+
+/* Reset de estilos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Estilos gerais do corpo da página */
+body {
+/*    background-color: rgb(230, 222, 222); */
+ width: 100%;
+  font-family: 'Rowdies', cursive;
+  font-size: 11px;
+}
+
+/* Cabeçalho */
+.cab {
+  background-color: black;
+  display: flex;
+  padding: 3px;
+  margin-bottom: 2px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.teclas{
+  display: flex;
+  background-color:rgb(145, 87, 87);
+  padding: 3px;
+  margin-bottom: 2px;
+  width: 98%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.cab img {
+  width: 25%;
+  padding-right: 15px;
+}
+
+.title {
+  color: rgb(216, 156, 14);
+  text-shadow: 1px 1px 1px aliceblue;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+p {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-left: 3px; 
+}
+/* Buttons */
+.b1 {
+  margin-right: 3%;
+  width: 20%;
+  height: 15%;
+  font-size: 10px;
+  margin-left: 3px;
+  background-color: #15270b;
+  color: white;
+  padding: 3px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px #9f1922;
+  transition-duration: 0.3s;
+}
+
+.b1:hover {
+  background-color: #4b5f27;
+}
+
+.b1:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.custosFixos {
+  background-color: black;
+  padding-left: 3px;
+}
+ .custosVariaveis{
+  background-color: black;
+  padding-left: 3px;
+}
+.resultados{
+  background-color: black;
+  padding-left: 3px;
+}
+/* Campos de entrada e selects */
+.in0 {
+  border-radius: 5px;
+  background-color: rgb(248, 249, 249);
+  font-size: 12px;
+  height: 20px;
+  border: 1px darkgreen solid;
+}
+.in1 {
+  border-radius: 5px;
+  background-color: rgb(248, 249, 249);
+  font-size: 12px;
+  height: 15px;
+  border: 1px darkgreen solid;
+}
+.in2 {
+  border-radius: 5px;
+  background-color: rgb(248, 249, 249);
+  font-size: 12px;
+  height: 15px;
+  border: 1px darkgreen solid;
+}
+.select {
+  border-radius: 5px;
+  background-color: rgb(248, 249, 249);
+  font-size: 12px;
+  width: 20%;
+  height: 15px;
+  border: 1px darkgreen solid;
+}
+
+.in1 {
+  width: 35%;
+  text-align: left;
+  padding-left: 1px;
+}
+
+.in2 {
+  width: 25%;
+  text-align: right;
+  padding-right: 4%;
+}
+
+/* Estilos para o layout responsivo */
+/* @media screen and (max-width: 600px) {
+  .cab img {
+    width: 13%;
+  }
+
+  .b1 {
+    width: 15%;
+    height: 65%;
+    font-size: 8px;
+  }
+
+  .title {
+    font-size: 0.7rem;
+  }
+
+  .campo {
+    width: 60%;
+    font-size: 16px;
+  }
+
+  .campo input,
+  .campo label {
+    font-size: 0.7rem;
+  }
+
+  .select {
+    width: 30%;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+ */  
+/* ========================================================================== */
+/* -------------------Display responsiove celular--------------------------- */
+/* /* ========================================================================== */
+/* @media screen and (max-width:10000px)  {
+  .cab{
+    display:inline-flex;
+    background-color: rgb(50, 90, 2);
+    margin-bottom: 10px;
+    width:98%;
+    height: auto;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+      
+  }
+  .campo {
+   background-color: aqua; *
+    padding: 0%;
+    width: 55%;
+    float:left;
+    color: #c0c0c0;
+
+  }
+
+  .title{
+    color:rgb(253,254,254);
+    font-size:3rem;
+    text-align: center;
+    text-align: center;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    
+  }}
+
+ 
+  @media screen and (max-width:10600px)  {
+    .cab{
+      display:inline-flex;
+      background-color: rgb(50, 90, 2);
+      margin-bottom: 10px;
+      width:98%;
+      height: auto;
+      flex-wrap:wrap;
+      justify-content: space-between;
+      align-items: center;
+        
+    }
+  
+    .title{
+      color:rgb(253,254,254);
+      font-size:1.3rem;
+      flex-wrap:wrap;
+      justify-content: space-between;
+   
+      
+    }
+    .campo {
+       background-color: aqua; 
+      padding: 0;
+      width: 60%;
+      float:left;
+      color: #c0c0c0;
+      font-size:16px;
+  
+    }
+
+    .campo input {
+      margin-top:3px;
+      padding-left: 0%;
+      
+      padding: 8px 1%; 
+      width:88%;
+    }
+    
+     .campo label {
+      font-size: 0.8rem;
+      margin: 10px 1%;
+      padding: 8px 1%;
+      width: 80%;
+   
+    } 
+    .select{
+      
+      width:30%;
+      height: 40px;
+      border:1px rgb(28, 22, 22) solid;
+      font-size: 12px;
+    }
+  }
+  @media screen and (max-width:10000px)  {
+    .cab{
+      display:inline-flex;
+      background-color: rgb(50, 90, 2);
+      margin-bottom: 10px;
+      width:98%;
+      height: auto;
+      flex-wrap:wrap;
+      justify-content: space-between;
+      align-items: center;  
+      
+    }
+
+    .cab img{
+      width:13%
+    }
+    .b1{
+      width:15%;
+      height: 65%;
+      font-size: 8px;
+  
+    }
+        .title{
+      color:rgb(253,254,254);
+      font-size:0.7rem;
+      flex-wrap:wrap;
+      justify-content: space-between;
+   
+      
+    }
+    .campo {
+      background-color: aqua; 
+      padding: 0;
+      width: 60%;
+      float:left;
+      color: #c0c0c0;
+      font-size:16px;
+  
+    }
+
+    .campo input {
+      margin-top:3px;
+      padding-left: 0%;
+      
+     padding: 8px 1%; 
+      width:88%;
+    }
+    
+     .campo label {
+      font-size: 0.7rem;
+      margin: 10px 1%;
+      padding: 8px 1%;
+      width: 80%;
+  
+    } 
+    .select{
+      
+      width:30%;
+      height: 40px;
+      border:1px rgb(28, 22, 22) solid;
+      font-size: 12px;
+    }
+  }
+ 
