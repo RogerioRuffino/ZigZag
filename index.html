@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Document</title>
+</head>
+<!-- +++++++++++++++++++++++++++++++++++ -->
+<body>
+<div class="cab">
+<img class="image" width="100px" src="zigzag.png" alt="Reference image" />
+<div class="title">ZIGZAG TECH<br> Bordados<br>
+<h6>Conversor</h6>
+</div>
+</div>       
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+<button class="b1" onclick="showCF()">Custos Fixos</button>
+<button class="b1" onclick="showCV()">Custos Variáveis</button>
+<button class="b1" onclick="showCV()">Custos Insumos</button>
+<button class="b1" onclick="showR()">Resultados</button>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+
+
+<!-- <p>Custos Fixos</p>
+ -->
+ <div class="custosFixos" style="display:block;">
+    <p>Custos Fixos</p>
+
+<input class="in1" type="text" placeholder="Aluguel">
+<input class="in2" type="text" placeholder="Digite o Valor" id="aluguel" name="input" onkeyup="numtostr(this,1,)"  onkeydown="moveToNextInput(event, 'luz')">
+<select class="select" id="inputType">
+<option value="m2">R$/Mês</option>           
+<option value="R$">R$/Ano</option> 
+</select>
+<br>
+
+<input class="in1" type="text" placeholder="Luz">
+<input class="in2" type="text" placeholder="Digite o Valor" id="luz" name="input" onkeyup="numtostr(this,3)" onkeydown="moveToNextInput(event, 'agua')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="Água">
+<input  class="in2" type="text" placeholder="Digite o Valor" id="agua" name="input" onkeyup="numtostr(this.value,5)" onkeydown="moveToNextInput(event, 'telefone')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="Telefone">
+<input class="in2"  type="text" placeholder="Digite o Valor" id="telefone" name="input" onkeyup="numtostr(this.value,7)" onkeydown="moveToNextInput(event, 'internet')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="Internet">
+<input class="in2" type="text" placeholder="Digite o Valor" id="internet" name="input" onkeyup="numtostr(this.value,9)" onkeydown="moveToNextInput(event, 'mlimpeza')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="Material de Limpeza">
+<input class="in2" type="text" placeholder="Digite o Valor" id="mlimpeza" name="input" onkeyup="numtostr(this.value,11)" onkeydown="moveToNextInput(event, 'mescritorio')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Material de Escritório">
+<input class="in2" type="text" placeholder="Digite o Valor" id="mescritorio" name="input" onkeyup="numtostr(this.value,13)" onkeydown="moveToNextInput(event, 'mobra')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Mão de Obra
+">
+<input class="in2" type="text" placeholder="Digite o Valor" id="mobra" name="input" onkeyup="numtostr(this.value,15)" onkeydown="moveToNextInput(event, 'mmaquinas')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Manutenção de Máquinas">
+<input class="in2" type="text" placeholder="Digite o Valor" id="mmaquinas" name="input" onkeyup="numtostr(this.value,17)" onkeydown="moveToNextInput(event, 'mcomputadores')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Manutenção de Computadores">
+<input class="in2" type="text" placeholder="Digite o Valor" id="mcomputadores" name="input" onkeyup="numtostr(this.value,19)" >
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+<input class="in1" type="text" placeholder="Total Custo Fixo">
+
+<input class="in2" type="text" placeholder="R$" id="cfTotal" name="input" onkeyup="numtostr(this.value,21)">
+
+<input class="in1" type="text" placeholder="Total Custo Fixo por Minuto">
+
+<input class="in2" type="text" placeholder="R$/minuto" id="cfminuto" name="input" onkeyup="numtostr(this.value,23)">
+
+</div>
+<!-- +++++++++++++++++++++++++++ fim custos fixos 
+++++++++++++++++++++++++++++++ -->  
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++ Custos Variaveis -->
+
+<div class="custosVariaveis" style="display:none;">
+    <p>Custos Variáveis</p>
+
+
+<input class="in1" type="text" placeholder="Linha de Bordado" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="lbordado" name="input" onkeyup="numtostr(this.value,25)" onkeydown="moveToNextInput(event, 'lbobina')">
+<select class="select" id="inputType">
+    <option value="m2">R$/Mês</option>           
+    <option value="R$">R$/Ano</option> 
+</select>
+<br>
+<input class="in1" type="text" placeholder="Linha para Bobina" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="lbobina" name="input" onkeyup="numtostr(this.value,27)" onkeydown="moveToNextInput(event, 'tntcomp')">
+    <select class="select" id="inputType">
+        <option value="m2">R$/Mês</option>           
+        <option value="R$">R$/Ano</option> 
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="TNT comprimento" >
+<input  class="in2" type="text" placeholder="Digite o Valor" id="tntcomp" name="input" onkeyup="numtostr(this.value,29)" onkeydown="moveToNextInput(event, 'tntlarg')">
+    <select class="select" id="inputType">
+        <option value="m">metros</option>           
+        
+    </select>
+<br>
+
+<input class="in1" type="text" placeholder="TNT largura" >
+<input class="in2"  type="text" placeholder="Digite o Valor" id="tntlarg" name="input" onkeyup="numtostr(this.value,31)" onkeydown="moveToNextInput(event, 'salario')">
+    <select class="select" id="inputType">
+        <option value="m2"></option>           
+        <option value="R$">cm</option> 
+    </select>
+<br>
+<!-- ---------------------------------------------- -->
+  <p>Operador de Máquina</p>
+ 
+<input class="in1" type="text" placeholder="Salário" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="salario" name="input" onkeyup="numtostr(this.value,33)"  onkeydown="moveToNextInput(event, 'timemaq')">
+    <select class="select" id="inputType">
+        <option value="m2">R$+encargos/Mês</option>           
+        <option value="R$">R$+encargos/Ano</option> 
+    </select>
+<br>
+<!-- ------------------------------------------------ -->
+<p>Tempo Operação da Máquina</p>  
+<input class="in1" type="text" placeholder="Horas trabalhadas" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="timemaq" name="input" onkeyup="numtostr(this.value,35)"  onkeydown="moveToNextInput(event, 'diasmaq')">
+    <select class="select" id="inputType">
+        <option value="m2">Mês</option>           
+        <option value="R$">Ano</option> 
+    </select>
+<br>   
+
+<input class="in1" type="text" placeholder="Dias Trabalhados" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="diasmaq" name="input" onkeyup="numtostr(this.value,37)"  onkeydown="moveToNextInput(event, 'cbast')">
+    <select class="select" id="inputType">
+        <option value="m2">Mês</option>           
+        <option value="R$">Ano</option> 
+    </select>
+<br>   
+
+<!-- ------------------------------------------------ -->
+<p>Dados da Produção</p>
+
+<input class="in1" type="text" placeholder="Comprimento Bastidor
+" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="cbast" name="input" onkeyup="numtostr(this.value,39)" onkeydown="moveToNextInput(event, 'abast')">
+    <select class="select" id="inputType">
+        <option value="m2">cm</option>           
+        <option value="R$">m</option>
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Altura Bastidor" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="abast" name="input" onkeyup="numtostr(this.value,41)"  onkeydown="moveToNextInput(event, 'vmaq')">
+    <select class="select" id="inputType">
+        <option value="m2">cm</option>           
+        <option value="R$">m</option>
+    </select>
+<br>   
+<input class="in1" type="text" placeholder="Velocidade Máquina" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="vmaq" name="input" onkeyup="numtostr(this,43)"  onkeydown="moveToNextInput(event, 'qcores')">
+    <select class="select" id="inputType">
+        <option value="m2">Pontos/min</option>         
+        <option value="R$">Pontos/Hora</option> 
+    </select>
+<br>     
+<input class="in1" type="text" placeholder="Quantidade de Cores" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="qcores" name="input" onkeyup="numtostr(this,45)"    onkeydown="moveToNextInput(event, 'ttl')">
+   <select class="select" id="inputType">     
+        <option value="R$">Qtde Cores</option> 
+    </select>
+<br>  
+<input class="in1" type="text" placeholder="Tempo troca de Linha/TNT" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="ttl" name="input" onkeyup="numtostr(this.value,47)"  onkeydown="moveToNextInput(event, 'qpontos')">
+    <select class="select" id="inputType">
+        <option value="m2">Cor</option>         
+        <option value="R$">text-align</option> 
+    </select>
+<br>
+<input class="in1" type="text" placeholder="Quantidade Pontos" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="qpontos" name="input" onkeyup="numtostr(this.value,49)"  onkeydown="moveToNextInput(event, 'qpecas')" >
+    <select class="select" id="inputType">
+        <option value="m2">Pontos</option>          
+    </select>
+<br>
+<input class="in1" type="text" placeholder="Quantidade de Peças" >
+<input class="in2" type="text" placeholder="Digite o Valor" id="qpecas" name="input" onkeyup="numtostr(this,51)">
+    <select class="select" id="inputType">
+        <option value="m2">Unidades</option>
+    </select>
+<br> 
+<input class="in1" type="text" placeholder="Total Custo Variável">
+
+<input class="in2" type="text" placeholder="R$" id="cvTotal" name="input" onkeyup="numtostr(this.value,53)">
+
+<input class="in1" type="text" placeholder="Total Custo Variavel por Minuto">
+
+<input class="in2" type="text" placeholder="R$/minuto" id="cvminuto" name="input" onkeyup="numtostr(this.value,55)">      
+</div>
+
+<!-- ++++++++++++++++++++++ fim custos variaveis -->
+
+<div class="resultados" style="display:none;">
+    <p>Resultados</p>
+    
+    <input class="in1" type="text" placeholder="Quantidade de Peças" >
+    <input class="in2" type="text" placeholder="Numero de Peças" id="npecas" name="input" onkeyup="numtostr(this,51)">
+        <select class="select" id="inputType">
+            <option value="m2">Unidades</option>
+            <option value="m2">Centenas</option>
+        </select>
+    <br> 
+    <input class="in1" type="text" placeholder="CustosTotais/Unidade" >
+    <input class="in2" type="text" placeholder="Custo R$/Peça" id="npecas" name="input" onkeyup="numtostr(this,51)">
+        <select class="select" id="inputType">
+            <option value="m2">R$</option>
+          
+        </select>
+    <br>
+    <input class="in1" type="text" placeholder="Preço Venda/Unidade" >
+    <input class="in2" type="text" placeholder="Preço Venda/Peça" id="npecas" name="input" onkeyup="numtostr(this,51)">
+        <select class="select" id="inputType">
+            <option value="m2">R$</option>
+          
+        </select>
+        <input class="in1" type="text" placeholder="Valor total do Pedido" >
+        <input class="in2" type="text" placeholder=" R$ do Pedido" id="valorPedido" name="input" onkeyup="numtostr(this,51)">
+            <select class="select" id="inputType">
+                <option value="m2">R$</option>
+              
+            </select>
+
+<input class="in1" type="text" placeholder="Total Custo Variável">
+<input class="in2" type="text" placeholder="R$" id="cvTotal" name="input" onkeyup="numtostr(this.value,53)">
+
+<input class="in1" type="text" placeholder="Total Custo Variavel por Minuto">
+
+<input class="in2" type="text" placeholder="R$/minuto" id="cvminuto" name="input" onkeyup="numtostr(this.value,55)"> 
+</div>
+
+
+
+
+<!-- +++++++++++++++++++++++++++ Saida m2++++++++++++++++++++++++++++++ -->   
+<script src="script.js"></script>
+</body>
+</html>
